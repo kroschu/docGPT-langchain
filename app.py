@@ -21,10 +21,10 @@ st.session_state.button_clicked = None
 
 
 if 'response' not in st.session_state:
-    st.session_state['response'] = ['How can I help you?']
+    st.session_state['response'] = ['Введіть питання стосовно Вашої бпзи знань']
 
 if 'query' not in st.session_state:
-    st.session_state['query'] = ['Hi']
+    st.session_state['query'] = ['Добре']
 
 app_logger = logger.get_logger(__name__)
 
