@@ -11,17 +11,17 @@ def side_bar() -> None:
         with st.expander(':orange[How to use?]'):
             st.markdown(
                 """
-                1. Enter your API keys: (You can use the `gpt4free` free model **without API keys**)
-                    * `OpenAI API Key`: Make sure you still have usage left
-                    * `SERPAPI API Key`: Optional. If you want to ask questions about content not appearing in the PDF document, you need this key.
-                2. **Upload a Document** file (choose one method):
-                    * method1: Browse and upload your own document file from your local machine.
-                    * method2: Enter the document URL link directly.
-                    
-                    (**support documents**: `.pdf`, `.docx`, `.csv`, `.txt`)
-                3. Start asking questions!
-                4. More details.(https://github.com/Lin-jun-xiang/docGPT-streamlit)
-                5. If you have any questions, feel free to leave comments and engage in discussions.(https://github.com/Lin-jun-xiang/docGPT-streamlit/issues)
+              1. Введіть ваші ключі API: (Ви можете використовувати безкоштовну модель `gpt4free` **без ключів API**)
+                                    * `OpenAI API Key`: Переконайтеся, що у вас ще залишився термін використання
+                                    * `SERPAPI API Key`: Необов'язково. Якщо ви хочете задати питання про вміст, який не з'являється в PDF-документі, вам знадобиться цей ключ.
+                                2. Завантажте файл **Документ** (виберіть один спосіб):
+                                    * спосіб 1: Знайдіть і завантажте власний файл документа з вашого локального комп'ютера.
+                                    * Спосіб 2: Введіть URL-адресу документа безпосередньо.
+                                    
+                                    (**допоміжні документи**: `.pdf`, `.docx`, `.csv`, `.txt`)
+                                3. Почніть задавати питання!
+                                4. Більше деталей (https://github.com/Lin-jun-xiang/docGPT-streamlit)
+                                5. Якщо у вас виникли запитання, не соромтеся залишати коментарі та брати участь у дискусіях.(https://github.com/Lin-jun-xiang/docGPT-streamlit/issues
                 """
             )
 
@@ -31,7 +31,7 @@ def side_bar() -> None:
             st.sidebar.success('API key loaded form previous input')
         else:
             OPENAI_API_KEY = st.sidebar.text_input(
-                label='#### Your OpenAI API Key 👇',
+                label='#### Твій OpenAI API ключ 👇',
                 placeholder="sk-...",
                 type="password",
                 key='OPENAI_API_KEY'
@@ -46,7 +46,7 @@ def side_bar() -> None:
             st.sidebar.success('API key loaded form previous input')
         else:
             SERPAPI_API_KEY = st.sidebar.text_input(
-                label='#### Your SERPAPI API Key 👇',
+                label='#### Твій SERPAPI API ключ 👇',
                 placeholder="...",
                 type="password",
                 key='SERPAPI_API_KEY'
@@ -59,8 +59,8 @@ def side_bar() -> None:
         gpt4free = GPT4Free()
         st.session_state.g4f_provider = st.selectbox(
             (
-                "#### Select a provider if you want to use free model. "
-                "([details](https://github.com/xtekky/gpt4free#models))"
+                "#### Виберіть провайдера, якщо хочете користуватися безкоштовною моделлю. "
+                "([Докладно](https://github.com/xtekky/gpt4free#models))"
             ),
             (['BestProvider'] + list(gpt4free.providers_table.keys()))
         )
